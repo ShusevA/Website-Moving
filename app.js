@@ -28,7 +28,7 @@ let scrollPos = 0;
             $(".effect").animate({ marginLeft: muvRight }, 300);
         } else {
             if (e.pageX > (allElem + 40)) return;
-            $(".effect").animate({ marginLeft: e.pageX - 70 }, 300);
+            $(".effect").animate({ marginLeft: e.pageX - 50 }, 300);
         }
     });
 
