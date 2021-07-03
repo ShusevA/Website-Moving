@@ -1,8 +1,6 @@
 
 let scrollPos = 0;
 
-$(document).ready(function () {
-
     const delta = $('.effect').offset();
 
     $(document).scroll(function () {
@@ -35,8 +33,6 @@ $(document).ready(function () {
     $(document).on("click", ".btn", () => {
         $('.language__all').toggle();
     });
-
-});
 
 
 
