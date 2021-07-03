@@ -25,7 +25,7 @@ let scrollPos = 0;
         let muvRight = parseInt(e.pageX - $('.effect').width());
         if (e.pageX > allPage) {
             if (muvRight < allElem) return;
-            $(".effect").animate({ marginLeft: muvRight + 40 }, 300);
+            $(".effect").animate({ marginLeft: muvRight }, 300);
         } else {
             if (e.pageX > (allElem + 40)) return;
             $(".effect").animate({ marginLeft: e.pageX - 70 }, 300);
