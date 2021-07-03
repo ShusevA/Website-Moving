@@ -1,0 +1,441 @@
+@import url(./main.css);
+
+@import url(./font.css);
+
+$color-circle: #FFCB46;
+$color-background: #BEBEBE;
+$color-text: #000000;
+$color-text-hamburger: #373737;
+$color-button: #FFFFFF;
+$color-line-muve: #BEBEBE;
+$color-text-hover: white;
+
+@mixin font-logo {
+    color: $color-text;
+    font-family: 'Grtsk Tera Bold';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 110%;    
+}
+
+@mixin font-hamburger {
+    color: $color-text-hamburger;
+    font-family: 'Grtsk Tera Bkslnt SemiBold';
+    font-size: 14px;
+    line-height: 140%;
+}
+
+@mixin font-muving {
+    color: $color-line-muve;
+    font-family: 'Grtsk Tera Bold Italic';
+    font-size: 20px;
+    line-height: 110%;
+}
+
+@mixin font-center {
+    color: $color-text-hamburger;
+    font-family: 'Grtsk Tera Bold';
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 110%;
+}
+
+@mixin font-language {
+    color: $color-button;
+    font-family: 'Grtsk Tera ExtraLight';
+    font-size: 10px;
+    line-height: 140%;
+    letter-spacing: .15em;
+}
+
+@keyframes mymove {
+     from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }    
+}
+
+@keyframes backMymove {
+    from {
+       transform: rotate(0deg);
+     }
+     to {
+       transform: rotate(-360deg);
+     }    
+}
+
+
+.contaner {
+    background-color: $color-background;
+    height: auto;
+    margin: 0 auto;
+    max-width: 1440px;
+    overflow: hidden;
+    padding: 31px 19px 19px;
+    position: relative;
+    z-index: 1;
+
+    @media only screen and (min-width: 375px) {
+        padding: 23px 21px 21px;
+    }
+
+    @media only screen and (min-width: 414px) {
+        padding: 21px 30px 21px;
+    }
+
+    @media only screen and (min-width: 768px) {
+        padding: 22px 10px 12px;
+    }
+
+    @media only screen and (min-width: 768px) {
+        padding: 31px 19px 19px;
+    }
+
+
+
+    .header {
+        display: flex;
+        flex-flow: row nowrap;
+        text-align: center;
+
+        .language {
+            display: flex;
+
+            .btn {
+                background-color: transparent;
+                border: 1px solid transparent;
+                border-radius: 50%;
+                cursor: pointer;
+                height: 32px;
+                width: 32px;
+
+                @media only screen and (min-width: 375px) {
+                    height: 34px;
+                    width: 34px;
+                }
+
+                @media only screen and (min-width: 1440px) {
+                    height: 38px;
+                    width: 38px;
+                }
+
+                &::before {
+                    content: url(../imgs/language.png);    
+                }
+            }
+
+            &__all {
+                display: none;
+                margin-left: 46px;
+                position: absolute;
+
+                button {
+                    @include font-language;
+                    background: transparent;
+                    border: transparent;
+                    cursor: pointer;
+                    margin-left: 16px;
+                    margin-top: 10px;
+                    opacity: .5;
+                    transition: all .5s;
+
+                    &:hover {
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+
+        p {
+            cursor: pointer;
+            @include font-logo;
+            display: flex;
+            margin: 0 auto;
+            margin-bottom: 42.966vh;
+            text-align: center;
+            text-transform: uppercase;
+
+            @media only screen and (min-width: 375px) {
+                font-size: 18px;
+                line-height: 34px;
+                margin-bottom: 235px;
+            }
+
+            @media only screen and (min-width: 414px) {
+                font-size: 20px;
+                margin-bottom: 265px;
+            }
+
+            @media only screen and (min-width: 768px) {
+                font-size: 24px;
+                margin-bottom: 368px;
+            }  
+
+            @media only screen and (min-width: 1024px) {
+                font-size: 24px;
+                margin-bottom: 272px;
+            }
+
+            @media only screen and (min-width: 1440px) {
+                font-size: 28px;
+                margin-bottom: 279px;
+            }  
+
+            &:hover {
+                color: #C4C4C4;
+                text-shadow: 1px 1px 0 $color-text;                
+            }
+        }
+
+        .hamburger {
+            align-items: center;
+            background-color: transparent;
+            border: transparent;
+            display: flex;
+            height: 10px;
+            justify-content: center;
+            padding-top: 18px;
+            visibility: visible;
+            width: 22px;
+
+            @media only screen and (min-width: 768px) {
+                visibility: hidden;
+            }
+
+            &::before {
+                content: url(../imgs/hamburger.png);
+            }
+        }
+    }
+
+    .elem-center {
+        @include font-muving;
+        left: -92vw;
+        opacity: 0.2;
+        position: absolute;
+        top: 50%;
+        text-align: center;
+        transform: translate(0, -50%);
+        transform: rotate(-67deg);
+        text-shadow: 1px 1px 0 $color-text-hamburger;
+        width: max-content;
+        z-index: -1;
+
+        @media only screen and (min-width: 375px) {
+            font-size: 28px;
+            left: -355px;
+            transform: rotate(-63deg);
+        }
+
+        @media only screen and (min-width: 768px) {
+            font-size: 42px;
+            left: -315px;
+            transform: rotate(-53deg);
+        }
+
+        @media only screen and (min-width: 1024px) {
+            left: -355px;
+            transform: rotate(-37deg);
+        }
+
+        @media only screen and (min-width: 1440px) {
+            font-size: 52px;
+            left: -340px;
+            transform: rotate(-30deg);
+        }
+
+        &_left {
+            transform: rotate(180deg);
+        }
+
+    }
+
+    .question li {
+        list-style-type: none;
+
+    .show-elem {
+        @include font-hamburger;
+        cursor: pointer;
+        border-bottom: 1px solid transparent; 
+        display: none;
+        text-decoration: none;
+        transition: all .3s;
+        
+        @media only screen and (min-width: 768px) {
+            display: block;
+        }
+
+        @media only screen and (min-width: 768px) {
+            font-size: 16px;
+        }
+
+        &::after {
+            border: 1px solid transparent;
+            content: "";
+            display: block;
+            height: 1px;
+            transition: all .3s;
+            width: 0;
+        }
+
+        &:hover {
+            color: $color-text-hover;
+        }
+
+        &:hover::after {
+            border: 1px solid $color-text-hover;
+            width: 50%;
+        }
+
+    }
+
+    .show-elem:active {
+        border-bottom: 2px solid $color-text-hover;
+    }
+
+    .show-elem:active::after {
+        border: none;
+    }
+
+    .elem-left {
+        left: 0;
+        position: absolute;
+        top: 50%;
+        transform: translate(0, -50%);
+        transform: rotate(-90deg);
+    }
+
+    .elem-right {
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translate(0, -50%);
+        transform: rotate(90deg);
+    }
+
+    .elem-bottom {
+        bottom: 19px;
+        left: 50%;
+        position: absolute;
+        transform: translate(-50%, 0);
+    }
+}
+
+    .main {
+        cursor: pointer;
+
+        .effect {
+            @include font-center;
+            margin: 0 auto;
+            margin-bottom: 46.2vh;
+            text-align: center;
+            width: 70.2vw;
+            z-index: 5;
+
+            @media only screen and (min-width: 375px) {
+                font-size: 34px;
+                margin-bottom: 278px;
+                width: 334px;
+            }
+
+            @media only screen and (min-width: 414px) {
+                font-size: 36px;
+                margin-bottom: 308px;
+                width: 353px;
+            }
+
+            @media only screen and (min-width: 768px) {
+                font-size: 58px;
+                margin-bottom: 404px;
+                width: 568px;
+            }
+
+            @media only screen and (min-width: 1024px) {
+                margin-bottom: 308px;
+                width: 724px;
+            }
+
+            @media only screen and (min-width: 1440px) {
+                font-size: 82px;
+                margin-bottom: 300px;
+                width: 900px;
+            }
+
+            &::before {
+                content: "";
+                background-color: $color-circle;
+                border-radius: 50%;
+                filter: blur(36px);
+                height: 190px;
+                left: 50%;
+                position: absolute;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                width: 190px;
+                z-index: -1;
+
+                @media only screen and (min-width: 375px) {
+                    filter: blur(46px);
+                    height: 294px;
+                    width: 294px;
+                }
+                
+                @media only screen and (min-width: 768px) {
+                    filter: blur(76px);
+                    height: 482px;
+                    width: 482px;
+                }
+
+                @media only screen and (min-width: 1440px) {
+                    height: 578px;
+                    width: 578px;
+                }
+
+            }
+
+        }
+
+        .photo {
+            animation: mymove infinite 2s linear;
+            animation-duration: 30s;
+            bottom: 36vh;
+            position: absolute;
+            right: 30vw;
+            width: 68px;
+
+            @media only screen and (min-width: 375px) {
+                left: 215px;
+                top: 415px;
+                width: 88px;
+            }
+
+            @media only screen and (min-width: 414px) {
+                left: 241px;
+                top: 453px;
+            }
+
+            @media only screen and (min-width: 768px) {
+                left: 475px;
+                top: 645px;
+                width: 109px;
+            }
+
+            @media only screen and (min-width: 1024px) {
+                left: 619px;
+                top: 498px;
+            }
+
+            @media only screen and (min-width: 1440px) {
+                left: 868px;
+                top: 582px;
+            }
+
+        }
+        
+    }
+
+}
