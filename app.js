@@ -1,9 +1,6 @@
-
 let scrollPos = 0;
 
- $(document).ready(function () {
-
-    const delta = $('.effect').offset();
+$(document).ready(function () {
 
     $(document).scroll(function () {
         let scrolling = $(this).scrollTop();
@@ -20,15 +17,22 @@ let scrollPos = 0;
     });
 
     $(".main").mousemove(function (e) {
-        let allPage = $('.main').innerWidth() / 2;
-        let allElem = delta.left / 1.3;
-        let muvRight = parseInt(e.pageX - $('.effect').width());
-        if (e.pageX > allPage) {
-            if (muvRight < allElem) return;
-            $(".effect").animate({ marginLeft: muvRight }, 300);
+        let position = $('.effect').offset();
+        let elLeft = e.pageX - position.top - $(".effect").width() / 2;
+        let elTop = e.pageY - position.left - $(".effect").height() / 2;
+        $(".effect").css({ transform: "translate(" + elLeft * 0.3 + "px, " + elTop * 0.12 + "px)" });
+    });
+
+    let elemTop = $(".circle").offset()
+    $(".contaner").mousemove(function (e) {
+        let allPage = ($('.contaner').innerHeight() / 2) + ($('.circle').innerHeight() / 2);
+        let muvRight = parseInt(e.pageY - ($('.circle').innerHeight() / 2));
+        if (e.pageY > allPage) {
+            if (e.pageY > ($('.contaner').innerHeight() - (elemTop.top / 2))) return;
+            $(".circle").animate({ top: muvRight }, 200);
         } else {
-            if (e.pageX > (allElem + 40)) return;
-            $(".effect").animate({ marginLeft: e.pageX - 50 }, 300);
+            if (e.pageY > elemTop.top || e.pageY < (elemTop.top / 2)) return;
+            $(".circle").animate({ top: e.pageY + ($('.circle').innerHeight() / 2) }, 200);
         }
     });
 
@@ -37,9 +41,3 @@ let scrollPos = 0;
     });
 
 });
-
-
-
-
-
-
