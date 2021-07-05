@@ -142,7 +142,7 @@ $color-text-hover: white;
                     opacity: .5;
                     padding: 1px 1px;
                     transition: all .5s;
-                    
+
                     @media only screen and (min-width: 768px) {
                         margin-left: 16px;
                         padding: 1px 8px;
@@ -332,13 +332,44 @@ $color-text-hover: white;
 }
 
     .main {
-        cursor: pointer;
+
+        .circle {
+            background-color: $color-circle;
+            border-radius: 50%;
+            filter: blur(36px);
+            height: 578px;
+            left: 50%;
+            position: absolute;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 578px;
+            z-index: -1;
+
+            @media only screen and (min-width: 375px) {
+                filter: blur(46px);
+                height: 294px;
+                width: 294px;
+            }
+                
+            @media only screen and (min-width: 768px) {
+                filter: blur(76px);
+                height: 482px;
+                width: 482px;
+            }
+
+            @media only screen and (min-width: 1440px) {
+                height: 578px;
+                width: 578px;
+            }
+
+        }
 
         .effect {
             @include font-center;
             margin: 0 auto;
             margin-bottom: 46.2vh;
             text-align: center;
+            transition: transform 3s;
             width: 70.2vw;
             z-index: 5;
 
@@ -369,38 +400,6 @@ $color-text-hover: white;
                 font-size: 82px;
                 margin-bottom: 300px;
                 width: 900px;
-            }
-
-            &::before {
-                content: "";
-                background-color: $color-circle;
-                border-radius: 50%;
-                filter: blur(36px);
-                height: 190px;
-                left: 50%;
-                position: absolute;
-                top: 50%;
-                transform: translate(-50%, -50%);
-                width: 190px;
-                z-index: -1;
-
-                @media only screen and (min-width: 375px) {
-                    filter: blur(46px);
-                    height: 294px;
-                    width: 294px;
-                }
-                
-                @media only screen and (min-width: 768px) {
-                    filter: blur(76px);
-                    height: 482px;
-                    width: 482px;
-                }
-
-                @media only screen and (min-width: 1440px) {
-                    height: 578px;
-                    width: 578px;
-                }
-
             }
 
         }
