@@ -387,44 +387,8 @@
           transform: translate(-50%, 0);
 }
 
-.contaner .main .circle {
-  background-color: #FFCB46;
-  border-radius: 50%;
-  -webkit-filter: blur(36px);
-          filter: blur(36px);
-  height: 578px;
-  left: 50%;
-  position: absolute;
-  top: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  width: 578px;
-  z-index: -1;
-}
-
-@media only screen and (min-width: 375px) {
-  .contaner .main .circle {
-    -webkit-filter: blur(46px);
-            filter: blur(46px);
-    height: 294px;
-    width: 294px;
-  }
-}
-
-@media only screen and (min-width: 768px) {
-  .contaner .main .circle {
-    -webkit-filter: blur(76px);
-            filter: blur(76px);
-    height: 482px;
-    width: 482px;
-  }
-}
-
-@media only screen and (min-width: 1440px) {
-  .contaner .main .circle {
-    height: 578px;
-    width: 578px;
-  }
+.contaner .main {
+  cursor: pointer;
 }
 
 .contaner .main .effect {
@@ -481,6 +445,47 @@
     font-size: 82px;
     margin-bottom: 300px;
     width: 900px;
+  }
+}
+
+.contaner .main .effect::before {
+  background-color: #FFCB46;
+  border-radius: 50%;
+  content: "";
+  -webkit-filter: blur(36px);
+          filter: blur(36px);
+  height: 578px;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 578px;
+  z-index: -1;
+}
+
+@media only screen and (min-width: 375px) {
+  .contaner .main .effect::before {
+    -webkit-filter: blur(46px);
+            filter: blur(46px);
+    height: 294px;
+    width: 294px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .contaner .main .effect::before {
+    -webkit-filter: blur(76px);
+            filter: blur(76px);
+    height: 482px;
+    width: 482px;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .contaner .main .effect::before {
+    height: 578px;
+    width: 578px;
   }
 }
 
