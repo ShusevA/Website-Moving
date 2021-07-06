@@ -23,19 +23,6 @@ $(document).ready(function () {
         $(".effect").css({ transform: "translate(" + elLeft * 0.3 + "px, " + elTop * 0.12 + "px)" });
     });
 
-    let elemTop = $(".circle").offset()
-    $(".contaner").mousemove(function (e) {
-        let allPage = ($('.contaner').innerHeight() / 2) + ($('.circle').innerHeight() / 2);
-        let muvRight = parseInt(e.pageY - ($('.circle').innerHeight() / 2));
-        if (e.pageY > allPage) {
-            if (e.pageY > ($('.contaner').innerHeight() - (elemTop.top / 2))) return;
-            $(".circle").animate({ top: muvRight }, 200);
-        } else {
-            if (e.pageY > elemTop.top || e.pageY < (elemTop.top / 2)) return;
-            $(".circle").animate({ top: e.pageY + ($('.circle').innerHeight() / 2) }, 200);
-        }
-    });
-
     $(document).on("click", ".btn", () => {
         $('.language__all').toggle();
     });
