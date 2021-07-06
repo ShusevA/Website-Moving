@@ -332,37 +332,7 @@ $color-text-hover: white;
 }
 
     .main {
-
-        .circle {
-            background-color: $color-circle;
-            border-radius: 50%;
-            filter: blur(36px);
-            height: 578px;
-            left: 50%;
-            position: absolute;
-            top: 50%;
-            transform: translate(-50%, -50%);
-            width: 578px;
-            z-index: -1;
-
-            @media only screen and (min-width: 375px) {
-                filter: blur(46px);
-                height: 294px;
-                width: 294px;
-            }
-                
-            @media only screen and (min-width: 768px) {
-                filter: blur(76px);
-                height: 482px;
-                width: 482px;
-            }
-
-            @media only screen and (min-width: 1440px) {
-                height: 578px;
-                width: 578px;
-            }
-
-        }
+        cursor: pointer;
 
         .effect {
             @include font-center;
@@ -401,6 +371,39 @@ $color-text-hover: white;
                 margin-bottom: 300px;
                 width: 900px;
             }
+
+            &::before {
+                background-color: $color-circle;
+                border-radius: 50%;
+                content: "";
+                filter: blur(36px);
+                height: 578px;
+                left: 50%;
+                position: absolute;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                width: 578px;
+                z-index: -1;
+    
+                @media only screen and (min-width: 375px) {
+                    filter: blur(46px);
+                    height: 294px;
+                    width: 294px;
+                }
+                    
+                @media only screen and (min-width: 768px) {
+                    filter: blur(76px);
+                    height: 482px;
+                    width: 482px;
+                }
+    
+                @media only screen and (min-width: 1440px) {
+                    height: 578px;
+                    width: 578px;
+                }
+    
+            }
+    
 
         }
 
